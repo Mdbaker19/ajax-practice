@@ -5,10 +5,39 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>-------</title>
+    <title>starWars api</title>
     <link rel="stylesheet" href="../CSS/starWars.css">
+    <style>
+        body{
+            background-color: black;
+            color: aliceblue;
+        }
+        #searchArea{
+            background-color: black;
+        }
+        input{
+            background-color: black;
+            border: none;
+        }
+        h1{
+            color: aliceblue;
+        }
+        label{
+            color: black;
+        }
+    </style>
 </head>
 <body>
+<h1 id="startingMessage">Sorry.. you need to wait a little bit before using the search bar...(<span id="counter">8</span> seconds)</h1>
+<div id="searchArea">
+    <label>
+        Find you character!
+        <input id="search">
+    </label>
+</div>
+<div id="characterRendering">
+
+</div>
 
 <script src="../JS/jQuery.js"></script>
 <script src="../JS/starWars.js"></script>
