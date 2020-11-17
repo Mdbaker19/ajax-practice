@@ -29,7 +29,15 @@ $(document).ready(function (){
 
     function render(data){
         let html = "";
-        html += `<h4>${data.name}</h4>`
+        html += `<div class="personArea">`;
+        html += `<h2>${data.name}</h2>`;
+        html += `<p>Height: ${data.height}</p>`;
+        // html += `<p>${data.eyeColor}`;
+        html += `<p>Hair Color: ${data.hairColor}</p>`;
+        // for(let i = 0; i < data.films.length; i++){
+        //     html += `<p>${data.films[i]}</p>`;
+        // }
+        html += `</div>`;
         $("#characterRendering").html(html);
     }
 
