@@ -1,68 +1,40 @@
 $(document).ready(function (){
+    let quoteArr = [];
+    $.ajax("http://quotes.stormconsultancy.co.uk/quotes.json").done((data) => {
+        for(let i = 0; i < data.length; i++){
+            let quote = {}
+                quote.a = data[i].author;
+                quote.q = data[i].quote;
+                quoteArr.push(quote);
+        }
+    });
 
-    const chuck = $.ajax("http://api.icndb.com/jokes/random");
-
-    function logJoke(){
-        chuck.done((data) => {
+    function getJoke(){
+        $.ajax("http://api.icndb.com/jokes/random").done((data) => {
             $(".content").html(renderJoke(data));
         });
     }
 
-    const codeQuote = $.ajax("http://quotes.stormconsultancy.co.uk/random.json");
-
-
-    $
-
-    function logQuote(){
-        codeQuote.done(data => {
-            $(".content").html(renderQuote(data));
-        });
+    function getQuote() {
+        let random = Math.floor(Math.random() * quoteArr.length-1)+1;
+        $(".content").html(renderQuote(quoteArr[random]));
     }
 
 
+    $("#pullJoke").on("click", getJoke);
 
+    $("#pullQuote").on("click", getQuote);
 
-
-
-    let count = 0;
-
-    $("#next").on("click", function (){
-        if(count % 2 === 0){
-            logJoke();
-        } else {
-            logQuote();
-        }
-        count++;
-    });
-
-    $("#previous").on("click", function (){
-        if(count % 2 === 0){
-            logJoke();
-        } else {
-            logQuote();
-        }
-        count++;
-    });
-
-
-
-
-
-
-
-
-
-
-
-
-    function renderJoke(data){
-        let html = `<div class="card"><h1>Chuck Norris</h1>`;
-        html += `<p class="info">${data.value.joke}</p>`;
+    function renderJoke(obj){
+        let html = `<div class="card"><h1>Random Joke</h1>`;
+        html += `<p class="info">${obj.value.joke}</p>`;
+        html += `</div>`;
         return html;
     }
-    function renderQuote(data){
-        let html = `<div class="card"><h1>${data.author}</h1>`;
-        html += `<p class="info">${data.quote}</p>`;
+    function renderQuote(obj){
+        let html = `<div class="card"><h1>${obj.a}</h1>`;
+        html += `<p class="info">${obj.q}</p>`;
+        html += `</div>`;
         return html;
     }
 });
