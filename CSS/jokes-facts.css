@@ -12,6 +12,8 @@ body{
     color: aliceblue;
     background-color: black;
     margin: 5em;
+    height: 50vh;
+    width: 80vw;
 }
 .content{
     width: 80%;
