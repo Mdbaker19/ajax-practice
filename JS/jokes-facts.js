@@ -10,11 +10,19 @@ $(document).ready(function (){
 
     const codeQuote = $.ajax("http://quotes.stormconsultancy.co.uk/random.json");
 
+
+    $
+
     function logQuote(){
         codeQuote.done(data => {
             $(".content").html(renderQuote(data));
         });
     }
+
+
+
+
+
 
     let count = 0;
 
@@ -40,6 +48,13 @@ $(document).ready(function (){
 
 
 
+
+
+
+
+
+
+
     function renderJoke(data){
         let html = `<div class="card"><h1>Chuck Norris</h1>`;
         html += `<p class="info">${data.value.joke}</p>`;
@@ -50,10 +65,4 @@ $(document).ready(function (){
         html += `<p class="info">${data.quote}</p>`;
         return html;
     }
-
-
-
-
-
-
 });
