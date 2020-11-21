@@ -13,18 +13,25 @@ $(document).ready(function (){
                 "backgroundColor": "white",
                 "border": "1px solid black"
             });
+            $("#characterRendering").css("overflowX", "scroll");
         }
     }
 
     let input = document.getElementById("search");
+    let renderArea = document.getElementById("characterRendering");
 
     input.addEventListener("input", function (){
+        let list = [];
+        renderArea.innerHTML = "";
         let value = input.value.toLowerCase();
         characters.forEach((person) => {
             if(person.name.toLowerCase().includes(value)){
-                render(person);
+                list.push(person);
             }
         });
+        for(let i = 0; i < list.length; i++) {
+            renderArea.innerHTML += render(list[i]);
+        }
     });
 
     function render(data){
@@ -32,13 +39,9 @@ $(document).ready(function (){
         html += `<div class="personArea">`;
         html += `<h2>${data.name}</h2>`;
         html += `<p>Height: ${data.height}</p>`;
-        // html += `<p>${data.eyeColor}`;
         html += `<p>Hair Color: ${data.hairColor}</p>`;
-        // for(let i = 0; i < data.films.length; i++){
-        //     html += `<p>${data.films[i]}</p>`;
-        // }
         html += `</div>`;
-        $("#characterRendering").html(html);
+        return html;
     }
 
 
