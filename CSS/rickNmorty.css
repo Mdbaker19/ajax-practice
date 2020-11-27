@@ -11,3 +11,24 @@ body{
     background-color: #101D42;
     color: #89D2DC;
 }
+.search{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    background-color: #89D2DC;
+    color: #101D42;
+    height: 10vh;
+}
+.chars{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 80vw;
+}
+.card{
+    height: fit-content;
+    width: 31%;
+    margin: 2% 0;
+}
