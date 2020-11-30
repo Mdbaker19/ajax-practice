@@ -23,12 +23,50 @@ body{
 }
 .chars{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
-    width: 80vw;
+    width: 98vw;
+    height: 100vh;
+    overflow: scroll;
+    overflow-x: hidden;
 }
 .card{
-    height: fit-content;
-    width: 31%;
+    height: 50%;
+    width: 90%;
     margin: 2% 0;
+    background-color: antiquewhite;
+    color: #111d42;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.charImage{
+    width: 95%;
+    height: 70%;
+}
+strong{
+    color: red;
+    text-decoration: underline;
+}
+h2{
+    text-align: center;
+}
+@media screen and (min-width: 426px){
+    .card{
+        width: 48%;
+    }
+    .chars{
+        justify-content: space-between;
+    }
+}
+@media screen and (min-width: 768px){
+    .card{
+        width: 31%;
+    }
+}
+@media screen and (min-width: 1000px){
+    .card{
+        width: 28%;
+    }
 }
