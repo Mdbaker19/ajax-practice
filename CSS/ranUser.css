@@ -8,6 +8,48 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #101D42;
+    background-color: #384e8f;
     color: #89D2DC;
+}
+.card{
+    width: 75vw;
+    max-width: 912px;
+    height: 50vh;
+    margin: 25vh auto;
+    background-color: azure;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 5px solid black;
+    border-radius: 5px;
+}
+.name{
+    height: 10%;
+}
+.info{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    height: 50%;
+    align-items: center;
+}
+.location{
+    height: 40%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+#new{
+    margin-top: 5em;
+    width: 25%;
+    height: 3em;
+    background-color: azure;
+    color: black;
+    border: none;
+    border-radius: 5px;
+}
+button:hover{
+    cursor: pointer;
 }
