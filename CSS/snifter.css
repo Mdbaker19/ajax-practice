@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+#drinkImg{
+    width: 175px;
+    height: 175px;
+}
+.drinkSet{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+#drinkItem{
+    margin: 15px;
+    width: 200px;
+    height: 300px;
+}
